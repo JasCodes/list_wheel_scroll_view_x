@@ -2,4 +2,4 @@
 
 ## [0.0.1] - Initial release
 
-* TODO: Describe initial release.
+* Released ListWheelScrollX with 3 examples.
