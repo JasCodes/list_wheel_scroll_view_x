@@ -4,6 +4,10 @@ library list_wheel_scroll_view_x;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+/// ListWheelScrollViewX is modified version of ListWheelScrollView but having
+/// scrollDirection arg. It used RotatedBox on ListWheelScrollView to accomplish
+/// this.
+
 class ListWheelScrollViewX extends StatelessWidget {
   /// Direction of the ListWheelScrollViewX
   final Axis scrollDirection;

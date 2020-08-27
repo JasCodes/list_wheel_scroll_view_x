@@ -1,7 +1,7 @@
 name: list_wheel_scroll_view_x
 description: A flutter project which add scroll direction to ListWheelScrollView allowing you to have horizontal ListWheelScroolView.
 version: 0.0.1
-
+repository: https://github.com/jascodes/list_wheel_scroll_view_x
 environment:
   sdk: ">=2.7.0 <3.0.0"
   flutter: ">=1.17.0 <2.0.0"
