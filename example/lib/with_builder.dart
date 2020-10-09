@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
         child: Container(
           height: 250,
           color: Colors.grey[400],
-          child: ListWheelScrollViewX.useDeligate(
+          child: ListWheelScrollViewX.useDelegate(
             scrollDirection: Axis.horizontal,
             diameterRatio: 1000,
             itemExtent: 80,
