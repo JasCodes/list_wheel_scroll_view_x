@@ -13,11 +13,6 @@ class ListWheelScrollViewX extends StatelessWidget {
   final Axis scrollDirection;
 
   final List<Widget> children;
-  // final FixedExtentScrollController controller;
-  // final double itemExtent;
-  // final double diameterRatio;
-  // final void Function(int) onSelectedItemChanged;
-  // final List<Widget> children;
 
   /// Typically a [FixedExtentScrollController] used to control the current item.
   ///
@@ -105,7 +100,7 @@ class ListWheelScrollViewX extends StatelessWidget {
   })  : childDelegate = null,
         super(key: key);
 
-  const ListWheelScrollViewX.useDeligate({
+  const ListWheelScrollViewX.useDelegate({
     Key key,
     this.scrollDirection = Axis.vertical,
     this.controller,
@@ -147,11 +142,19 @@ class ListWheelScrollViewX extends StatelessWidget {
     return RotatedBox(
       quarterTurns: scrollDirection == Axis.horizontal ? 3 : 0,
       child: ListWheelScrollView.useDelegate(
-        onSelectedItemChanged: onSelectedItemChanged,
         controller: controller,
-        itemExtent: itemExtent,
-        diameterRatio: diameterRatio,
         physics: FixedExtentScrollPhysics(),
+        diameterRatio: diameterRatio,
+        perspective: perspective,
+        offAxisFraction: offAxisFraction,
+        useMagnifier: useMagnifier,
+        magnification: magnification,
+        overAndUnderCenterOpacity: overAndUnderCenterOpacity,
+        itemExtent: itemExtent,
+        squeeze: squeeze,
+        onSelectedItemChanged: onSelectedItemChanged,
+        renderChildrenOutsideViewport: renderChildrenOutsideViewport,
+        clipBehavior: clipBehavior,
         childDelegate: _childDelegate,
       ),
     );
