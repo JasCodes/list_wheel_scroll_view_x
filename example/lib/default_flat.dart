@@ -1,5 +1,4 @@
 import 'package:example/widgets/colored_container.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:list_wheel_scroll_view_x/list_wheel_scroll_view_x.dart';
 
@@ -12,7 +11,7 @@ main() {
 }
 
 class Home extends StatelessWidget {
-  const Home({Key key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class Home extends StatelessWidget {
           color: Colors.grey[400],
           child: ListWheelScrollViewX(
             scrollDirection: Axis.horizontal,
-            diameterRatio: 10000000,
+            diameterRatio: 10,
             itemExtent: 80,
             children: [
               ColoredContainer(Colors.red),
