@@ -1,5 +1,4 @@
 import 'package:example/widgets/colored_container.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:list_wheel_scroll_view_x/list_wheel_scroll_view_x.dart';
 
@@ -12,7 +11,7 @@ main() {
 }
 
 class Home extends StatelessWidget {
-  const Home({Key key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
   Color _getColor(int index) {
     List<Color> _colors = [
       Colors.red,

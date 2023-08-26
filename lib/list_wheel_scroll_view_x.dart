@@ -12,7 +12,7 @@ class ListWheelScrollViewX extends StatelessWidget {
   /// Direction of the ListWheelScrollViewX
   final Axis scrollDirection;
 
-  final List<Widget> children;
+  final List<Widget>? children;
 
   /// Typically a [FixedExtentScrollController] used to control the current item.
   ///
@@ -29,7 +29,7 @@ class ListWheelScrollViewX extends StatelessWidget {
   ///
   /// To read the current selected item only when the value changes, use
   /// [onSelectedItemChanged].
-  final ScrollController controller;
+  final ScrollController? controller;
 
   /// How the scroll view should respond to user input.
   ///
@@ -37,7 +37,7 @@ class ListWheelScrollViewX extends StatelessWidget {
   /// user stops dragging the scroll view.
   ///
   /// Defaults to matching platform conventions.
-  final ScrollPhysics physics;
+  final ScrollPhysics? physics;
 
   /// {@macro flutter.rendering.wheelList.diameterRatio}
   final double diameterRatio;
@@ -67,13 +67,13 @@ class ListWheelScrollViewX extends StatelessWidget {
   final double squeeze;
 
   /// On optional listener that's called when the centered item changes.
-  final ValueChanged<int> onSelectedItemChanged;
+  final ValueChanged<int>? onSelectedItemChanged;
 
   /// {@macro flutter.rendering.wheelList.renderChildrenOutsideViewport}
   final bool renderChildrenOutsideViewport;
 
   /// A delegate that helps lazily instantiating child.
-  final ListWheelChildDelegate childDelegate;
+  final ListWheelChildDelegate? childDelegate;
 
   /// {@macro flutter.widgets.Clip}
   ///
@@ -81,7 +81,7 @@ class ListWheelScrollViewX extends StatelessWidget {
   final Clip clipBehavior;
 
   const ListWheelScrollViewX({
-    Key key,
+    Key? key,
     this.scrollDirection = Axis.vertical,
     this.controller,
     this.physics,
@@ -91,17 +91,17 @@ class ListWheelScrollViewX extends StatelessWidget {
     this.useMagnifier = false,
     this.magnification = 1.0,
     this.overAndUnderCenterOpacity = 1.0,
-    @required this.itemExtent,
+    required this.itemExtent,
     this.squeeze = 1.0,
     this.onSelectedItemChanged,
     this.renderChildrenOutsideViewport = false,
     this.clipBehavior = Clip.hardEdge,
-    @required this.children,
+    required this.children,
   })  : childDelegate = null,
         super(key: key);
 
   const ListWheelScrollViewX.useDelegate({
-    Key key,
+    Key? key,
     this.scrollDirection = Axis.vertical,
     this.controller,
     this.physics,
@@ -111,12 +111,12 @@ class ListWheelScrollViewX extends StatelessWidget {
     this.useMagnifier = false,
     this.magnification = 1.0,
     this.overAndUnderCenterOpacity = 1.0,
-    @required this.itemExtent,
+    required this.itemExtent,
     this.squeeze = 1.0,
     this.onSelectedItemChanged,
     this.renderChildrenOutsideViewport = false,
     this.clipBehavior = Clip.hardEdge,
-    @required this.childDelegate,
+    required this.childDelegate,
   })  : children = null,
         super(key: key);
 
@@ -124,7 +124,7 @@ class ListWheelScrollViewX extends StatelessWidget {
   Widget build(BuildContext context) {
     final _childDelegate = children != null
         ? ListWheelChildListDelegate(
-            children: children.map((child) {
+            children: children!.map((child) {
             return RotatedBox(
               quarterTurns: scrollDirection == Axis.horizontal ? 1 : 0,
               child: child,
@@ -134,7 +134,7 @@ class ListWheelScrollViewX extends StatelessWidget {
             builder: (context, index) {
               return RotatedBox(
                 quarterTurns: scrollDirection == Axis.horizontal ? 1 : 0,
-                child: childDelegate.build(context, index),
+                child: childDelegate!.build(context, index),
               );
             },
           );
